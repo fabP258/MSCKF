@@ -2,6 +2,25 @@ import numpy as np
 from msckf.quaternion import Quaternion
 
 
+class ImuMeasurement:
+
+    def __init__(
+        self,
+        t: float,
+        w: np.array,
+        a: np.array,
+    ):
+
+        # timestamp
+        self.t = t
+
+        # imu angular rates w = [w_x, w_y, w_z]^T
+        self.w = w
+
+        # imu acceleration a = [a_x, a_y, a_z]^T
+        self.a = a
+
+
 class ImuState:
 
     def __init__(
